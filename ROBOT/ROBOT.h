@@ -20,6 +20,12 @@ class ROBOT
 			Point FORWARD_KINEMATICS(Transformation H01,Transformation H12, Transformation H23, Point P3);
 			Point CS_ORIGINS(float x, float y, float z);
 			void PRINT_ANGLE(float THETA_1,float THETA_2,float THETA_3);
+			Point Z_HAT_GROUND(Point A_MEAS,Point B_MEAS, Point C_MEAS, Point GROUND_NORMAL);
+			Point GROUND_NORMAL(Point A_MEAS,Point B_MEAS, Point C_MEAS);
+			Point D(Point A_MEAS, Point GROUND_NORMAL, Point D_MEAS);
+			Transformation H_A_0(Point A_MEAS,Point B_MEAS, Point C_MEAS, Point D_MEAS, Point GROUND_NORMAL,Point Z_HAT_GROUND);
+			Point CENTER_OF_MASS(Point A_MEAS,Point B_MEAS, Point C_MEAS, Point D_MEAS,Point Z_HAT_GROUND,Transformation H_A_O);
+			BLA::Matrix<3,4> CONCATENTATED_GROUND_CONTACT_POINTS(Point B_MEAS, Point C_MEAS, Point D, Transformation H_A_O);
 		// Parameters and constants
 	private:
 };
